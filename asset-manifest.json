@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/gitter-repo/static/css/main.f6f85957.chunk.css",
-    "main.js": "/gitter-repo/static/js/main.8ede6867.chunk.js",
-    "main.js.map": "/gitter-repo/static/js/main.8ede6867.chunk.js.map",
+    "main.js": "/gitter-repo/static/js/main.545b36c2.chunk.js",
+    "main.js.map": "/gitter-repo/static/js/main.545b36c2.chunk.js.map",
     "runtime-main.js": "/gitter-repo/static/js/runtime-main.1ee5592e.js",
     "runtime-main.js.map": "/gitter-repo/static/js/runtime-main.1ee5592e.js.map",
     "static/js/2.092ecbe1.chunk.js": "/gitter-repo/static/js/2.092ecbe1.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.1ee5592e.js",
     "static/js/2.092ecbe1.chunk.js",
     "static/css/main.f6f85957.chunk.css",
-    "static/js/main.8ede6867.chunk.js"
+    "static/js/main.545b36c2.chunk.js"
   ]
 }
