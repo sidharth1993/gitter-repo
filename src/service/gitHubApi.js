@@ -8,7 +8,7 @@ const authorize = (code) => {
     data.append("client_id", 'd9ac0753dcb7cfae87de');
     data.append("client_secret", '177c3bb99b418a80a1bc1f32bc9ec5e885e6f95e');
     data.append("code", code);
-    data.append("redirect_uri", 'http://localhost:3000/callback');
+    data.append("redirect_uri", 'https://sidharth1993.github.io/gitter-repo/callback');
     return axios.post('login/oauth/access_token',data).then((response) => {
         const params = new URLSearchParams(response.data);
         const access_token = params.get("access_token");
