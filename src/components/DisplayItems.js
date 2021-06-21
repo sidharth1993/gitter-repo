@@ -1,47 +1,45 @@
 import React from 'react';
 import FolderIcon from '@material-ui/icons/Folder';
 import DescriptionIcon from '@material-ui/icons/Description';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Grid from '@material-ui/core/Grid';
-import { Typography } from '@material-ui/core';
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+    root: {
+      width: 200,
+    },
+  });
 
 const DisplayItems = ({objectArray,openSomething,rightClickItem}) => {
+    const classes = useStyles();
 
     const openFile = (repo) => {
         openSomething(repo);
     }
+
     return (
-        <List dense={true}>
-        {
-            objectArray && objectArray.length > 0 && objectArray.map((object,index) => {
-                return (
-                    <ListItem key={index}>
-                        <Grid item xs={4} md={4}>
-                            <ListItemText onDoubleClick={() => { openFile(object.name) }} primary={
-                                    <ListItemIcon onContextMenu={(event) => {rightClickItem(event,object.id)}}>
-                                        {
-                                        (object.type)? 
-                                        (object.type === 'file')? <DescriptionIcon /> : <FolderIcon />
-                                        :
-                                        <FolderIcon /> 
-                                        }
-                                    </ListItemIcon>
-                            } secondary={object.name} />
-                        </Grid>
-                        <Grid item xs={4} md={4}>
-                            {object.created_at && <ListItemText primary={object.created_at} secondary="created on" />}
-                        </Grid>
-                        <Grid item xs={4} md={4}>
-                            {object.created_at && <ListItemText primary={object.updated_at} secondary="updated on" />}
-                        </Grid>
-                    </ListItem>
-                );
-            })
-        }
-    </List>
+        <ul className="flexContainer" >
+            {
+                objectArray && objectArray.length > 0 && objectArray.map((object,index) => {
+                    return (
+                                <li key={index} onDoubleClick={() => { openFile(object.name) }} className="flexItem">
+                                    <BottomNavigation
+                                        showLabels={true}
+                                        className={classes.root}
+                                    > 
+                                        <BottomNavigationAction label={object.name} icon={
+                                                        (object.type && object.type === 'file')? 
+                                                        <DescriptionIcon fontSize="large" onContextMenu={(event) => {rightClickItem(event,object.id)}} /> 
+                                                        : 
+                                                        <FolderIcon fontSize="large" onContextMenu={(event) => {rightClickItem(event,object.id)}} />
+                                        } />
+                                    </BottomNavigation>
+                                </li>
+                            );
+                        })
+            }
+        </ul>
     );
 }
 

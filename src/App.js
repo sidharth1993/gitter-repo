@@ -4,7 +4,6 @@ import {
 } from "react-router-dom";
 import { Route, Switch } from 'react-router';
 import LoggedIn from './pages/LoggedIn';
-import LoginPage from './pages/LoginPage';
 import Header from './components/Header';
 import React from 'react';
 import { useState } from 'react';
@@ -25,10 +24,7 @@ function App() {
           <Header user={user} ></Header>
           <section>
             <Switch>
-              <Route path="/login">
-                  <LoginPage></LoginPage>
-              </Route>
-              <Route path="/callback">
+              <Route path="/">
                   <LoggedIn userDetails={userDetails} ></LoggedIn>
               </Route>
             </Switch>

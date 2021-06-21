@@ -34,3 +34,19 @@ section {
     transform: rotate(360deg);
   }
 }
+
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: start;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.flexItem {
+  padding: 20px;
+  flex-basis: 15%;
+}

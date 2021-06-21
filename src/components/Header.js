@@ -29,7 +29,7 @@ function Header({user}) {
   const classes = useStyles();
 
   const loginClick = () => {
-    window.location.href = 'https://github.com/login/oauth/authorize?scope=user,repo,delete_repo&client_id=d9ac0753dcb7cfae87de&redirect_uri=https://sidharth1993.github.io/gitter-repo/callback';
+    window.location.href = 'https://github.com/login/oauth/authorize?scope=user,repo,delete_repo&client_id=d9ac0753dcb7cfae87de&redirect_uri=http://localhost:3000';
   }
 
   return (
